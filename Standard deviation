@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+#include <math.h>
+
+int main() {
+
+int numbers[] = {10, 20, 30, 40, 50}; // Example numbers
+
+int size = sizeof(numbers)/sizeof(numbers[0]);
+
+//printf("%d",size);
+
+// Calculate sum
+
+double sum = 0.0;
+
+for (int i = 0; i < size; i++) {
+
+sum += numbers[i];
+
+}
+
+// Calculate average
+
+double average = sum / size;
+
+// Calculate standard deviation
+
+double variance = 0.0;
+
+for (int i = 0; i < size; i++) {
+
+variance += (numbers[i] - average) * (numbers[i] - average);
+
+}
+
+variance /= size;
+
+double std_deviation = sqrt(variance);
+
+// Print results
+
+printf("Sum: %.2f\n", sum);
+
+printf("Average: %.2f\n", average);
+
+printf("Standard Deviation: %.2f\n", std_deviation);
+
+return 0;
+}
